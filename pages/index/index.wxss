@@ -1,0 +1,75 @@
+/* pages/index/index.wxss */
+
+page {
+    background: #f7f7f7;
+}
+
+.tower-swiper .tower-item {
+    transform: scale(calc(0.5 + var(--index) / 10));
+    margin-left: calc(var(--left) * 100rpx - 150rpx);
+    z-index: var(--index);
+}
+
+.index_menu {
+    padding: 30rpx;
+    border-radius: 999px;
+    width: 88%;
+    margin: 40rpx auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.menu_item {
+    width: calc(100% / 3);
+    display: inline-block;
+    text-align: center
+}
+
+.menu_image {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+}
+
+.menu_text {
+    padding-top: 15rpx;
+    font-weight: 500;
+    font-size: 26rpx;
+}
+
+._icon {
+    font-size: 40rpx;
+    color: #fbbd08;
+    margin-right: 20rpx;
+}
+
+.list_box {
+    background-color: #fff;
+    text-align: center;
+    padding: 0 0 40rpx 0;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+}
+
+.list_img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+._text {
+    color: #999;
+    font-size: 26rpx;
+    margin-top: 30rpx;
+}
+
+.zanwu_btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    line-height: 60rpx;
+    width: 60%;
+}

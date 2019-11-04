@@ -1,0 +1,79 @@
+<cu-custom bgColor="bg-gradual-blue" isCustom="{{true}}">
+    <view slot="content">个人资料</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<form bindsubmit="submitDate">
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">姓名</view>
+        <input placeholder="请输入姓名" name="us_name" value="{{us_name}}"></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom sex_form">
+        <view class="title">性别</view>
+        <switch class="switch-sex" name="us_sex" value="{{us_sex}}" checked="{{sex_checked}}"></switch>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">年龄</view>
+        <input placeholder="请输入年龄" type="number" name="us_age" value="{{us_age}}" maxlength="2"></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">联系电话</view>
+        <input placeholder="请输入联系电话" type="number" name="mobile" value="{{mobile}}" maxlength="11"></input>
+        <view class="cu-capsule radius">
+            <view class="cu-tag bg-blue" id="biaoqian">+86</view>
+            <view class="cu-tag line-blue">中国大陆</view>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">身份证号</view>
+        <input placeholder="请输入身份证号" type="idcard" name="id_card" value="{{id_card}}" maxlength="18"></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">证件期限</view>
+        <picker mode="date" value="{{bDate}}" start="2000-01-01" end="{{today}}" bindchange="beginDateChange" name="id_card_begintime">
+            <view class="picker">{{bDate}}</view>
+        </picker>
+        <view class="cu-capsule radius">
+            <view class="cu-tag bg-green biaoqian">起始日期</view>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">证件期限</view>
+        <picker mode="date" value="{{eDate}}" start="{{today}}" end="2040-09-01" bindchange="endDateChange" name="id_card_endtime">
+            <view class="picker">{{eDate}}</view>
+        </picker>
+        <view class="cu-capsule radius">
+            <view class="cu-tag bg-red biaoqian">截止日期</view>
+        </view>
+        
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">所在地区</view>
+        <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" name="ssq_index" value="{{indexArr}}" range="{{multiArray}}" range-key="name">
+            <view class="picker">
+                {{multiArray[0][indexArr[0]].name}}   {{multiArray[1][indexArr[1]].name}} {{multiArray[2][indexArr[2]].name}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">街道/乡镇</view>
+        <picker mode="selector" bindchange="zhenChange" value="{{zhenIndex}}" range="{{zhenArray}}" range-key="name">
+            <view class="picker">{{zhenArray[zhenIndex].name}}</view>
+        </picker>
+    </view>
+    <view class="cu-form-group align-start margin-top">
+        <view class="title">详细地址</view>
+        <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="请输入详细地址" name="address_detail" value="{{address_detail}}"></textarea>
+    </view>
+    <button class="addBtn shadow shadow-lg bg-green" hover-class="none" hover-stop-propagation="false" id="queding" form-type="submit">
+        确认提交
+    </button>
+</form>
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+    <!-- <view class='cuIcon-emojifill text-orange'></view> -->
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+    <!-- <view class='gray-text'>加载中...</view> -->
+</view>

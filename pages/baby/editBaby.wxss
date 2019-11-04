@@ -1,0 +1,6 @@
+/* pages/baby/editBaby.wxss */
+/* switch 颜色设置 */
+
+switch .wx-switch-input:not([class*="bg-"]) {
+    background: var(--pink) !important;
+}

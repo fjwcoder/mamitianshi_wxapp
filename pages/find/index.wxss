@@ -1,0 +1,84 @@
+/* pages/find/index.wxss */
+.green_block {
+    background: linear-gradient(to left, #46dba2, #06ae6e);
+    height: 160rpx;
+}
+
+.find_menu {
+    width: 660rpx;
+    padding: 40rpx 20rpx;
+    position: absolute;
+
+    border-radius: 25rpx;
+    left: calc(50% - 330rpx);
+    overflow: hidden;
+}
+
+.menu_item {
+    width: 25%;
+    display: inline-block;
+    text-align: center
+}
+
+.menu_image {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.menu_text {
+    padding-top: 15rpx;
+    font-size: 24rpx;
+}
+
+._icon {
+    font-size: 40rpx;
+    color: #fbbd08;
+    margin-right: 20rpx;
+}
+
+.list_box {
+    background-color: #fff;
+    text-align: center;
+    padding: 0 0 40rpx 0;
+}
+
+.list_img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+}
+
+._text {
+    color: #999;
+    font-size: 26rpx;
+    margin-top: 30rpx;
+}
+
+.cu-avatar {
+    background-color: #f7f7f7;
+    float: left;
+}
+
+.text_float {
+    float: left;
+    padding-left: 50rpx;
+    line-height: 64rpx;
+    font-size: 30rpx;
+}
+
+.zhanwei {
+    height: 340rpx;
+}
+
+.text_overflow {
+    /* font-size: 38rpx; */
+    /* line-height: 38rpx; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* word-break: break-all; */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+}

@@ -1,0 +1,77 @@
+<cu-custom bgColor="bg-gradual-pink" isCustom="{{true}}">
+    <view slot="content">预约列表</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<view class="listBox" wx:if="{{appointmentList.length}}">
+    <view class="list_item bg-white margin-top shadow-warp add_appointment_box" bind:tap="addAppointment">
+        <image class="add_appointment" src="../../images/add_appointment.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+    </view>
+      
+    <view class="list_item bg-white margin-top shadow-warp" wx:for="{{appointmentList}}" wx:for-item="item" wx:key wx:for-index="idx">
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-titles text-green"></text>
+                <text class="text-xl text-bold">{{item.baby_name}}</text>
+            </view>
+        </view>
+        <view class="list_content bg-white">
+            <view wx:for="{{item.vaccine_list}}" wx:for-item="vac_item" wx:key wx:for-index="vac_idx">
+                <view class="vac_name">预约疫苗({{vac_idx + 1}})：{{vac_item.zh_name_full}}</view>
+            </view>
+            <view class="vac_date">预约时间:</view>
+            <view class="date_box">
+                <view class="ln_60">
+                    <view class="cu-tag bg-green sm light">开始</view>
+                    {{item.yu_time}}
+                </view>
+                <view class="ln_60" style="">
+                    <view class="cu-tag bg-red sm light">结束</view>
+                    {{item.yu_endtime}}
+                </view>
+            </view>
+        </view>
+        <view class="list_btn bg-white">
+            <view class="btn_info bg-green" bind:tap="appointmentInfo" data-aid="{{item.a_id}}" data-oid="{{item.order_id}}">
+                查看详情
+            </view>
+            <view class="btn_qrcode bg-cyan" bind:tap="showQrCode" data-qrurl="{{item.qr_url}}" >
+                二维码
+            </view>
+            <view class="btn_cancel bg-grey" bind:tap="cancelAppointment" data-aid="{{item.a_id}}" data-oid="{{item.order_id}}">
+                取消预约
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view class="zanwu"  hover-class="none" hover-stop-propagation="false">
+        <image class="list_img" src="../../images/zanwu_jiezhong.png" mode="widthFix"></image>
+        <view class="_text">暂时没有您的预约记录~</view>
+    </view>
+</view>
+  
+<view  wx:if="{{appointmentList.length}}">
+
+</view>
+<button class="addBtn shadow shadow-lg " id="queding" style="margin-top:30rpx;" bind:tap="addAppointment" wx:else>
+    添加预约
+</button>
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>
+<view class="cu-modal bottom-modal {{show?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view class="action text-blue">
+                <text class="cuIcon-qrcode"></text>
+            </view>
+            <view class="action text-green" bind:tap="hideQrModal">确定</view>
+        </view>
+        <view class="padding-xl">
+            <view class="">
+                <canvas class='canvas qr_box' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
+            </view>
+        </view>
+    </view>
+</view>

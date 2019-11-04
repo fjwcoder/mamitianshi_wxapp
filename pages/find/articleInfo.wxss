@@ -1,0 +1,42 @@
+/* pages/find/articleInfo.wxss */
+.publishedTime,
+.author,
+.tag_box {
+    margin: 10rpx 0
+}
+
+.secondary_header {
+    padding-top: 0
+}
+
+.title-footer {
+    position: relative;
+    z-index: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    color: #aaa;
+    text-align: center;
+    margin: 0 18rpx 0;
+
+}
+
+.title-footer .cont {
+    background: #f7f7f7;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+    z-index: 10;
+
+}
+.title-footer .hr {
+    background: linear-gradient(to right,#f7f6f6,#aaa,#f7f6f6);
+    height: 2rpx;
+    border: 0;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    margin-top: 1px;
+    z-index: -1;
+    
+}

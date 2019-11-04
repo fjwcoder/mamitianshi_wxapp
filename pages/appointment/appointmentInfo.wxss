@@ -1,0 +1,59 @@
+/* pages/appointment/appointmentInfo.wxss */
+
+.baby_content,.inj_content{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    padding-bottom: 14rpx;
+}
+
+.name,.sex{
+    float: left;
+    width: 50%;
+    line-height: 60rpx;
+}
+.baby_info,.inj_info{
+    padding: 0 50rpx;
+}
+.birth{
+    line-height: 60rpx;
+}
+.inj_name,.inj_date{
+    line-height: 60rpx;
+}
+.inj_introduce_btn{
+    line-height: 60rpx;
+    border-radius: 999px;
+    color: #1cbbb4;
+    text-align: center;
+    font-size: 22rpx;
+    width: 70%;
+    margin: 10rpx auto; 
+    border: 1rpx solid #1cbbb4;
+}
+.ym_num{
+	font-size: 40rpx;
+	font-weight: 400
+}
+.vac_date,.date_box{
+
+    float: left;
+}
+.vac_date{
+    line-height: 120rpx;
+}
+.date_box{
+    padding-left: 30rpx;
+}
+.ln_60{
+    line-height: 60rpx;
+}
+.inject_position_content{
+    padding: 0 50rpx;
+    line-height: 60rpx;
+}
+.qr_box{
+    margin: 0 auto
+}

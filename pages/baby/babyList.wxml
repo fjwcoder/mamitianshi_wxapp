@@ -1,0 +1,72 @@
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+    <view slot="content">我的宝宝</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<view class="listBox " hover-class="none" hover-stop-propagation="false" wx:if="{{babyList}}">
+    <view class="listItem shadow-warp bg-white" hover-class="none" hover-stop-propagation="false" wx:for="{{babyList}}" wx:for-item="item" wx:key="" wx:for-index="idx">
+        <view class="listTitle solid-bottom">
+            <view class="cu-bar bg-white">
+                <view class="action">
+                    <text class="cuIcon-title text-{{colorList[idx].name}}"></text>
+                    <text>
+                        <text class="cu-tag bg-green light radius sm" wx:if="{{item.is_default}}">
+                            <text>默认</text>
+                        </text>
+                        <text>{{item.baby_name}}</text>
+                    </text>
+                </view>
+            </view>
+        </view>
+        <view class="listContent">
+            <view class="content_sex">
+                性别：{{item.baby_sex === 1?'男':'女'}}
+                <text class="{{item.baby_sex===1?'cuIcon-male text-blue':'cuIcon-female text-pink'}} text-bold"></text>
+            </view>
+            <view class="content_birth">生日：{{item.baby_birth_date}}</view>
+        </view>
+        <view class="listButton">
+            <view class="injBtn text-Abc cu-btn line-green round" data-id="{{item.id}}" bind:tap="beginAppointment">
+                接种
+            </view>
+            <view class="editBtn  text-Abc cu-btn line-blue round" data-id="{{item.id}}" bind:tap="editBaby">
+                编辑
+            </view>
+            <view class="deleteBtn text-Abc cu-btn line-red round" data-id="{{item.id}}" bind:tap="deleteBaby">
+                删除
+            </view>
+        </view>
+        <view class="_border" hover-class="none" hover-stop-propagation="false"></view>
+        <view class="kaiguan" wx:if="{{!item.is_default}}">
+            <form>
+                <view class="cu-form-group">
+                    <view class="title" style="font-size:24rpx;">设为默认</view>
+                    <switch bindchange="changeIsDefault" data-id="{{item.id}}" data-name="{{item.name}}"></switch>
+                </view>
+            </form>
+        </view>
+    </view>
+    <navigator class="" target="" url="addBaby" hover-class="none" open-type="navigate">
+        <button class="addBtn shadow  bg-green" hover-class="none" hover-stop-propagation="false">
+            添加
+        </button>
+    </navigator>
+</view>
+<view wx:else class="noBaby" hover-class="none" hover-stop-propagation="false">
+    <view class="img_box" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="../../images/nobaby.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    </view>
+    <view class="_text" hover-class="none" hover-stop-propagation="false">您还没有添加宝宝信息，点击去添加～</view>
+    <navigator class="" target="" url="addBaby" hover-class="none" open-type="navigate">
+        <view class="addBtn elseBtn shadow  bg-green" hover-class="none" hover-stop-propagation="false">
+            添加
+        </view>
+    </navigator>
+</view>
+<!-- <view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view> -->
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='../../images/loading1.gif' class='gif-black response' mode='widthFix'></image>
+</view>

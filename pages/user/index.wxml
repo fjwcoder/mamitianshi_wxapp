@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-gradual-blue">
+    <view slot="content">我的</view>
+</cu-custom>
+<view class="white_block" hover-class="none" hover-stop-propagation="false"></view>
+<view class="user_card" bind:tap="jumpUserInfo">
+    <view class="user_img">
+         <open-data class="" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="user_name"><open-data type="userNickName"></open-data></view>
+    <view class="user_img_w">
+        <image class="" src="../../images/foot.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    </view>
+    <view class="cuIcon-right user_right"></view>
+</view>
+<view class="cu-list menu " style="border:none;">
+    <view class="cu-item arrow margin-top" style="margin-top:30rpx;">
+        <navigator class="content" target="" url="../baby/babyList" hover-class="none" open-type="navigate">
+            <text class="iconfont icon-weibiaoti-copy _menu_icon"></text>
+            <text class="text-grey" style="line-height:100rpx;">我的宝宝</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow margin-top">
+        <view class="content" bind:tap="getScanCode">
+            <text class="cuIcon-scan menu_icon"></text>
+            <text class="text-grey">扫一扫</text>
+        </view>
+    </view>
+    <view class="cu-item arrow margin-top">
+        <navigator class="content" target="" url="../appointment/beginAppointment" hover-class="none" open-type="navigate">
+            <text class="cuIcon-light menu_icon"></text>
+            <text class="text-grey">接种预约</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow margin-top">
+        <navigator class="content" target="" url="index" hover-class="none" open-type="navigate">
+            <text class="cuIcon-safe menu_icon"></text>
+            <text class="text-grey">抗体检测</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow margin-top">
+        <navigator class="content" target="" url="index" hover-class="none" open-type="navigate">
+            <text class="cuIcon-creative menu_icon"></text>
+            <text class="text-grey">帮助</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow margin-top">
+        <navigator class="content" target="" url="index" hover-class="none" open-type="navigate">
+            <text class="cuIcon-settings menu_icon"></text>
+            <text class="text-grey">设置</text>
+        </navigator>
+    </view>
+</view>
+<view class=" bottom_btn text-red">退出登录</view>

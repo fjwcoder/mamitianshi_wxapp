@@ -1,0 +1,44 @@
+/* pages/equipment/index.wxss */
+
+.add_img{
+    width: 25%;
+    display: block;
+    margin:0 auto;
+    margin-top: 40%;
+}
+._img{
+    width: 94%;
+    display: block;
+    margin:0 auto;
+    margin-top: 20rpx;
+}
+.img_box{
+    position: relative;
+}
+.btn_box{
+    position: absolute;
+    bottom: 32rpx;
+    left: 3%;
+    color: #fff;
+    width: 94%;
+}
+.btn_item{
+    text-align: center;
+    float: left;
+    width: 50%;
+
+    font-size: 26rpx;
+    position: relative;
+    z-index: 100;
+}
+.btn_text{
+    line-height: 80rpx;
+}
+.icon-kaishishijian,.icon-lishi{
+    position: absolute;
+    left:80rpx;
+}
+.icon-jiantouarrow497{
+    position: absolute;
+    
+}

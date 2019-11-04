@@ -1,0 +1,83 @@
+<cu-custom bgColor="bg-gradual-pink" isCustom="{{true}}">
+    <view slot="content">预约详情</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<view>
+    <view class="baby_content margin-top shadow-warp bg-white ">
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-titles text-pink"></text>
+                <text class="text-df">宝宝信息</text>
+            </view>
+        </view>
+        <view class="baby_info">
+            <view style=" overflow: hidden; ">
+                <view class="name">姓名：{{appointmentInfo.baby_name}}</view>
+                <!-- <view class="sex">性别：{{babyList[index].baby_sex === 1?'男':'女'}}</view> -->
+            </view>
+            <!-- <view class="birth">出生日期：{{babyList[index].baby_birth_date}}</view> -->
+        </view>
+    </view>
+    <view class="inj_content margin-top shadow-warp bg-white">
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-titles text-cyan"></text>
+                <text class="text-df">预约疫苗详情</text>
+            </view>
+        </view>
+        <view class="inj_info" wx:for="{{appointmentInfo.vaccine_list}}" wx:for-item="item" wx:for-index="idx" wx:key>
+            <view class="inj_name">疫苗名称({{idx+1}})：{{item.zh_name_full}}</view>
+        </view>
+        <view style="padding:0 50rpx;">
+            <view class="vac_date">预约时间:</view>
+            <view class="date_box">
+                <view class="ln_60">
+                    <view class="cu-tag bg-green sm light">开始</view>
+                    {{appointmentInfo.yu_time}}
+                </view>
+                <view class="ln_60" style="">
+                    <view class="cu-tag bg-red sm light">结束</view>
+                    {{appointmentInfo.yu_endtime}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="inj_content margin-top shadow-warp bg-white">
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-titles text-green"></text>
+                <text class="text-df">接种点详情</text>
+            </view>
+        </view>
+        <view class="inject_position_content">
+            <view class="">名称：{{inject_position_info.name}}</view>
+            <view class="">电话：{{inject_position_info.phone}}</view>
+            <view class="">地址：{{inject_position_info.address}}</view>
+            <view class="">业务范围：{{inject_position_info.business}}</view>
+            <view class="">资质：{{inject_position_info.permit}}</view>
+        </view>
+        <view class="inj_introduce_btn " bind:tap="showQrModal">点击查看预约二维码</view>
+    </view>
+    <!-- <button class="addBtn shadow shadow-lg bg-pink" id="queding" style="margin-top:30rpx;background-color:#e03997" bind:tap="submitData">
+        提交预约
+    </button> -->
+</view>
+<view class="cu-modal bottom-modal {{show?'show':''}}">
+    <view class="cu-dialog">
+        <view class="cu-bar bg-white">
+            <view class="action text-blue">
+                <text class="cuIcon-qrcode"></text>
+            </view>
+            <view class="action text-green" bind:tap="hideQrModal">确定</view>
+        </view>
+        <view class="padding-xl">
+            <view class="">
+                <canvas class='canvas qr_box' style="width:{{qrcodeWidth}}px; height:{{qrcodeWidth}}px;" canvas-id='canvas' bindlongtap='save'></canvas>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>

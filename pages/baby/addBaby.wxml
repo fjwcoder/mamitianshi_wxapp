@@ -1,0 +1,59 @@
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+    <view slot="content">添加宝宝</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<form bindsubmit="submitData">
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">姓名</view>
+        <input placeholder="请输入姓名" name="baby_name"></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom sex_form">
+        <view class="title">性别</view>
+        <switch class="switch-sex" checked name="baby_sex"></switch>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">身份证号</view>
+        <input placeholder="请输入身份证号" type="idcard" name="baby_id_card" maxlength="18"></input>
+        <view class="cu-capsule radius">
+            <view class="cu-tag bg-gray biaoqian text-grey">选填</view>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">接种卡号</view>
+        <input placeholder="请输入身份证号" type="idcard" name="card_no" ></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">出生日期</view>
+        <picker mode="date" value="{{birthDate}}" start="2000-01-01" end="{{today}}" bindchange="birthDateChange"  name="baby_birth_date">
+            <view class="picker">{{birthDate}}</view>
+        </picker>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">父亲姓名</view>
+        <input placeholder="请输入父亲姓名" name="father_name"></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">母亲姓名</view>
+        <input placeholder="请输入母亲姓名" name="mother_name"></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">紧急联系人</view>
+        <input placeholder="请输入紧急联系人姓名" name="urgent_name"></input>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">电话</view>
+        <input placeholder="紧急联系人联系电话" type="number" name="urgent_mobile" maxlength="11" ></input>
+        <view class="cu-capsule radius">
+            <view class="cu-tag bg-blue" id="biaoqian">+86</view>
+            <view class="cu-tag line-blue">中国大陆</view>
+        </view>
+    </view>
+    <view class="cu-form-group margin-top solid-bottom">
+        <view class="title">接种点</view>
+        <input placeholder="点击右侧按钮选择" value="{{vac_place}}" disabled="{{true}}"></input>
+        <button class="cu-btn bg-green shadow" bind:tap="jumpChooseInjectposition">选择</button>
+    </view>
+    <button class="addBtn shadow  bg-green" hover-class="none" hover-stop-propagation="false" id="queding" form-type="submit">
+        添加
+    </button>
+</form>

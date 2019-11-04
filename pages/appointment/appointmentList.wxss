@@ -1,0 +1,63 @@
+/* pages/appointment/appointmentList.wxss */
+page{
+    padding-bottom: 60rpx;
+}
+.list_content{
+    padding: 0 50rpx;
+    line-height: 60rpx;
+    overflow: hidden;
+    
+}
+.add_appointment_box{
+    padding: 40rpx 0
+}
+.add_appointment{
+    display: block;
+    width: 80%;
+    margin:5% auto
+}
+.vac_date,.date_box{
+
+    float: left;
+}
+.vac_date{
+    line-height: 120rpx;
+}
+.date_box{
+    padding-left: 30rpx;
+}
+.list_item{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    padding-bottom: 14rpx;
+}
+.list_btn{
+    overflow: hidden;
+    margin: 20rpx 0;
+}
+.btn_cancel,.btn_info,.btn_qrcode{
+    line-height: 60rpx;
+    border-radius: 999px;
+    width:calc(calc(100% / 3) - 60rpx);
+    margin: 0 30rpx;
+    float: left;
+    color: #fff;
+    text-align: center;
+}
+.list_img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 200rpx;
+}
+#queding{
+    position: fixed;
+    bottom: 5%;
+    left:calc(50% - 300rpx);
+}
+.qr_box{
+    margin: 0 auto
+}

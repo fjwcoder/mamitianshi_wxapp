@@ -1,0 +1,68 @@
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+    <view slot="content">选择接种点</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<form action="">
+    <view class="cu-bar bg-white">
+        <view class="action">
+            <text class="cuIcon-title text-green"></text>
+            <text>选择省市区乡镇</text>
+        </view>
+    </view>
+    <view class="cu-form-group  solid-bottom">
+        <view class="title">所在地区</view>
+        <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" name="ssq_index" value="{{indexArr}}" range="{{multiArray}}" range-key="name">
+            <view class="picker">
+                {{multiArray[0][indexArr[0]].name}}   {{multiArray[1][indexArr[1]].name}} {{multiArray[2][indexArr[2]].name}}
+            </view>
+        </picker>
+    </view>
+    <!-- <view class="cu-form-group solid-bottom">
+        <view class="title">街道/乡镇</view>
+        <picker mode="selector" bindchange="zhenChange" value="{{zhenIndex}}" range="{{zhenArray}}" range-key="name">
+            <view class="picker">{{zhenArray[zhenIndex].name}}</view>
+        </picker>
+    </view> -->
+</form>
+<form bindsubmit="submitData">
+    <radio-group class="block" bindchange="radioFill">
+        <view class="item_box shadow-warp bg-white margin-top" wx:for="{{list}}" wx:for-item="item" wx:for-index="idx" wx:key>
+            <view class="cu-bar bg-white solid-bottom">
+                <view class='action'>
+                    <text class='cuIcon-title text-blue '></text>
+                    名称：{{item.name}}
+                </view>
+                <view class='action'>
+                    <radio value="{{item.id+','+item.name}}" name="id"></radio>
+                </view>
+            </view>
+            <view class="_info bg-white">
+                 <view class="dizhi padding-sm">
+                    <text class="cuIcon-servicefill text-olive"></text>
+                    电话：{{item.phone}}
+                </view>
+                <view class="dizhi padding-sm">
+                    <text class="cuIcon-locationfill text-grey"></text>
+                    地址：{{item.address}}
+                </view>
+                <view class="dizhi padding-sm">
+                    <text class="cuIcon-newshotfill text-blue"></text>
+                    业务范围：{{item.business}}
+                </view>
+                <view class="dizhi padding-sm">
+                    <text class="cuIcon-medalfill text-yellow"></text>
+                    资质证书编号：{{idx}}
+                </view>
+               
+            </view>
+        </view>
+    </radio-group>
+    <view class="" hover-class="none" hover-stop-propagation="false" wx:if="{{list.length<1}}"> 
+        暂时没有该地区下的接种点数据哦～
+    </view>
+    <button class="addBtn" form-type="submit">确定</button>
+</form>
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>

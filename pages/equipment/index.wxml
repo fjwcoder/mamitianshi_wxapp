@@ -1,0 +1,29 @@
+<cu-custom bgColor="bg-gradual-orange" >
+  <view slot="content">设备</view>
+</cu-custom>
+<view class="big_box" wx:if="{{have}}">
+    <view class="img_box">
+        <image class="_img" src="../../images/naizui.png" mode="widthFix"></image>
+        <view class="btn_box" style="    background-color: rgba(255, 255, 255, 0.15);">
+            <view class="btn_item" bindtap="jumpHistory">
+                <text class="iconfont icon-lishi" style="font-size:38rpx;line-height: 80rpx;"></text>
+                <text class="btn_text">历史记录</text>
+            </view>
+            <view class="btn_item" bindtap="startMeasuring">
+                <text class="iconfont icon-kaishishijian" style="font-size:40rpx;line-height: 80rpx;"></text>
+                <text class="btn_text">开始检测</text>
+            </view>
+        </view>
+    </view>
+    <view class="img_box" bind:tap="jumpBabyGrowthRecord">
+        <image class="_img" src="../../images/chengzhangjilu.png" mode="widthFix"></image>
+        <view class="btn_box" style="text-align: right;padding-right:100rpx;">
+            <text class="btn_text">立即查看</text>
+            <text class="iconfont icon-jiantouarrow497" style="font-size:40rpx;line-height: 80rpx;"></text>
+        </view>
+    </view>
+</view>
+<view class="add_box" wx:else>
+    <image class="add_img" src="../../images/add_img.png" mode="widthFix" bindtap="addEquipment"></image>
+    <view class="_text">您还没有添加设备，点击上方图标去添加~</view>
+</view>

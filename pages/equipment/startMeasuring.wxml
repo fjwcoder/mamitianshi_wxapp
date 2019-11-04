@@ -1,0 +1,46 @@
+<cu-custom bgColor="bg-gradual-orange" isCustom="{{true}}">
+  <view slot="content">开始检测</view>
+  <view class="action" slot="right">
+    <view class="cu-load load-icon {{isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+<form>
+  <view class="cu-form-group margin-top">
+    <view class="title text-pink">
+      <text class="cuIcon-clothesfill text-pink"></text>
+      选择宝宝
+    </view>
+    <picker bindchange="chooseBaby" value="{{index}}" range="{{babyList}}" range-key="baby_name" class="babyPicker">
+      <!-- <view class="picker">{{babyList[index].baby_name}}</view> -->
+      <view class="picker">{{index===null?'请选择':babyList[index].baby_name}}</view>
+    </picker>
+  </view>
+</form>
+<view class="big_box">
+  <view class="" hover-class="none" hover-stop-propagation="false" wx:if="{{baby_id}}">
+    <view class="cu-bar ">
+      <view class="action">
+        <text class="cuIcon-titles text-green"></text>
+        <text class="text-xl text-bold">宝宝体温</text>
+      </view>
+    </view>
+    <view class="tem_box">{{temMsg}}</view>
+    <button class="_addBtn shadow  bg-{{connectColor}}" hover-class="none" bind:tap="connectOrClose" id="queding" >
+      {{connectMsg}}
+    </button>
+    <view class="text_box">
+      <view class="tem_text">
+        <text class="cuIcon-info text-orange"></text>
+        <text class="text-orange">请保证您手机的蓝牙与定位服务处于开启状态</text>
+      </view>
+      <view class="tem_text">请将奶嘴体温计放入宝宝口中</view>
+      <view class="tem_text">为保证体温数据准确，测量期间请勿将奶嘴拿出</view>
+      <view class="tem_text">当体温计发出"滴滴滴"的响声后测量体温完成</view>
+    </view>
+  </view>
+</view>
+<!-- 加载动态图 -->
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+  <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>

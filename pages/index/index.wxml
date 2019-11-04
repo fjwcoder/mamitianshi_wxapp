@@ -1,0 +1,130 @@
+<!-- pages/index/index.wxml -->
+<cu-custom bgColor="bg-banner">
+    <view slot="content">首页</view>
+</cu-custom>
+<swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item wx:for="{{swiperList}}" wx:key>
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+        <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </swiper-item>
+</swiper>
+<view class="index_menu shadow shadow-lg  bg-white" hover-class="none" hover-stop-propagation="false">
+    <view class="menu_item" style="color:#ff705c">
+        <navigator url="../appointment/appointmentList" hover-class="none">
+            <image class="menu_image" src="../../images/menu0.png" mode="widthFix"></image>
+            <view class="menu_text">预约</view>
+        </navigator>
+    </view>
+    <view class="menu_item" style="color:#18a5f7">
+        <image class="menu_image" src="../../images/menu1.png" mode="widthFix"></image>
+        <view class="menu_text">库存</view>
+    </view>
+    <view class="menu_item" style="color:#ffd300">
+        <image class="menu_image" src="../../images/menu2.png" mode="widthFix"></image>
+        <view class="menu_text">更多</view>
+    </view>
+</view>
+<view class="cu-bar bg-white">
+    <view class="action">
+        <text class="cuIcon-titles text-green"></text>
+        <text class="text-xl text-bold">即将接种</text>
+    </view>
+    <view class=" _icon" hover-class="none" hover-stop-propagation="false">
+        <view class="iconfont icon-shijian" selectable="false" space="false" decode="false" style="font-size:40rpx;"></view>
+    </view>
+</view>
+<view class="list_box  bg-white shadow-warp " hover-class="none" wx:for="{{babyVacInfo}}" wx:for-item="item" wx:key wx:if="{{babyVacInfo}}" wx:for-index="i">
+    <view class="cu-bar bg-white solid-bottom">
+        <view class="action">
+            <text class=" cuIcon-favorfill text-{{ColorList[i].name}} "></text>
+            <text class="text-bold text-{{ColorList[i].name}}">{{item.baby_name}}</text>
+        </view>
+    </view>
+    <view class=" padding-xs text-bold text-{{ColorList[i].name}} text-xl">
+        {{item.next_inject_date}}
+    </view>
+    <view wx:for="{{item.vaccine_list}}" wx:for-item="vac_item" wx:key>
+        <view class="" style="line-height:60rpx;">{{vac_item.zh_name_full}}</view>
+    </view>
+    <view>
+        <button class="cu-btn round line-{{ColorList[i].name}} shadow margin-top" bind:tap="jumpAppointment" data-id="{{item.id}}">
+            立即预约
+        </button>
+    </view>
+</view>
+<!-- <view class="list_box  bg-white shadow-warp " hover-class="none" wx:for="{{babyVacInfo}}" wx:for-item="item" wx:key wx:if="{{babyVacInfo}}" wx:for-index="i">
+    <view class="cu-bar bg-white solid-bottom">
+        <view class="action">
+            <text class=" cuIcon-favorfill text-{{ColorList[i].name}} "></text>
+            <text class="text-bold text-{{ColorList[i].name}}">{{item.baby_name}}</text>
+        </view>
+    </view>
+    <view class="list_item" hover-class="none" hover-stop-propagation="false">
+        <view class="cu-list menu card-menu sm-border margin-top" wx:for="{{item.vaccine_list}}" wx:for-item="vac_item" wx:key>
+            <view class="cu-item">
+                <view class="content" style="text-align:left">
+                    <text class="cuIcon-title text-{{ColorList[i].name}}"></text>
+                    <text class="text-{{ColorList[i].name}} text-lg">
+                        <text>{{item.next_inject_date}}</text>
+                    </text>
+                </view>
+                <view class="action">
+                    <button class="cu-btn sm  round bg-{{ColorList[i].name}} light shadow text-white" bind:tap="jumpAppointment" data-id="{{item.id}}">
+                        <text class="cuIcon-edit  text-{{ColorList[i].name}}"></text>
+                        预约
+                    </button>
+                </view>
+            </view>
+            <view class="text-grey text-sm">{{vac_item.zh_name_full}}</view>
+        </view>
+    </view>
+</view> -->
+<view class="zanwu bg-white padding-xl" hover-class="none" hover-stop-propagation="false" wx:if="{{babyVacInfo.length===0}}">
+    <image class="list_img" src="../../images/zanwu_jiezhong.png" mode="widthFix"></image>
+    <view class="_text">暂无即将接种的预约记录~</view>
+    <navigator url="../appointment/beginAppointment" hover-class="none">
+        <view class="text-center round bg-green zanwu_btn" bind:tap="">预约</view>
+    </navigator>
+</view>
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>
+<!-- <view wx:for="{{aaa}}" wx:for-item="item" wx:key>
+    <view class="cu-bar bg-white" >
+        <view class="action">
+            <text class="cuIcon-titles text-green"></text>
+            <text class="text-xl text-bold">
+                <text class="" wx:if="{{aaa}}">即将接种(</text>
+                <text class="text-green" wx:if="{{aaa}}">{{item.baby_name}}</text>
+                <text class="" wx:if="{{aaa}}">)</text>
+            </text>
+        </view>
+        <view class=" _icon" hover-class="none" hover-stop-propagation="false">
+            <view class="iconfont icon-shijian" selectable="false" space="false" decode="false" style="font-size:40rpx;"></view>
+        </view>
+    </view>
+    <view class="list_box " hover-class="none" wx:for="{{item.ym}}" wx:for-item="ym_item" wx:key>
+        <view class="list_item" wx:if="{{defaultBaby}}" hover-class="none" hover-stop-propagation="false">
+            <view class="cu-list menu sm-border {{menuCard?'card-menu margin-top':''}}">
+                <view class="cu-item {{menuArrow?'arrow':''}}">
+                    <view class="content" style="text-align:left">
+                        <text class="cuIcon-favorfill text-green"></text>
+                        <text class="text-green">{{ym_item.ym_name}}</text>
+                        <text class="text-grey text-sm">2019-12-12</text>
+                    </view>
+                    <view class="action">
+                        <button class="cu-btn round bg-green shadow  text-white">
+                            <text class="cuIcon-edit  text-white"></text>
+                            预约
+                        </button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- <view class="zanwu" wx:else hover-class="none" hover-stop-propagation="false">
+        <image class="list_img" src="../../images/zanwu_jiezhong.png" mode="widthFix"></image>
+        <view class="_text">暂无即将接种的预约记录~{{idx}}</view>
+    </view> 
+</view> -->
+<!-- <button open-type="launchApp" app-parameter="wechat" binderror="launchAppError">打开APP</button> -->

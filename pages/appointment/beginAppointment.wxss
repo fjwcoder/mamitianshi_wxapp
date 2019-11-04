@@ -1,0 +1,96 @@
+/* pages/appointment/beginAppointment.wxss */
+
+
+/* page{
+	padding-top: 150rpx;
+} */
+
+.cu-form-group picker {
+    flex: 1;
+    padding-right: 40rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.cu-form-group picker .picker {
+    line-height: 100rpx;
+    font-size: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: right;
+}
+
+.babyPicker::after {
+    font-family: "cuIcon";
+    display: block;
+    content: "\e6a3";
+    position: absolute;
+    font-size: 34rpx;
+    color: var(--grey);
+    line-height: 100rpx;
+    width: 60rpx;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: -20rpx;
+    margin: auto;
+    overflow: hidden;
+}
+
+.baby_content,
+.inj_content {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    padding-bottom: 14rpx;
+}
+
+.name,
+.sex {
+    float: left;
+    width: 50%;
+    line-height: 60rpx;
+}
+
+.baby_info,
+.inj_info {
+    padding: 0 50rpx;
+}
+
+.birth {
+    line-height: 60rpx;
+}
+
+.inj_name,
+.inj_date {
+    line-height: 60rpx;
+}
+
+.inj_p_btn,
+.inj_introduce_btn {
+    line-height: 60rpx;
+    border-radius: 999px;
+    text-align: center;
+    font-size: 22rpx;
+    width: 70%;
+    margin: 10rpx auto;
+}
+
+.inj_introduce_btn {
+    color: #1cbbb4;
+    border: 1rpx solid #1cbbb4;
+}
+
+.inj_p_btn {
+    color: #8dc63f;
+    border: 1rpx solid #8dc63f;
+}
+
+.ym_num {
+    font-size: 40rpx;
+    font-weight: 400
+}

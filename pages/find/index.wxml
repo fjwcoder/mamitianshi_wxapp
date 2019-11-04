@@ -1,0 +1,53 @@
+<cu-custom bgColor="bg-gradual-green">
+  <view slot="content">发现</view>
+</cu-custom>
+<view class="green_block" hover-class="none" hover-stop-propagation="false"></view>
+<view class="find_menu shadow shadow-lg bg-white" style="top:16%;">
+  <view class="menu_item" bind:tap="developing">
+    <image class="menu_image" src="../../images/find_menu0.png" mode="widthFix"></image>
+    <view class="menu_text">推荐</view>
+  </view>
+  <view class="menu_item" bind:tap="developing">
+    <image class="menu_image" src="../../images/find_menu1.png" mode="widthFix"></image>
+    <view class="menu_text">接种咨询</view>
+  </view>
+  <view class="menu_item" bind:tap="developing">
+    <image class="menu_image" src="../../images/find_menu2.png" mode="widthFix"></image>
+    <view class="menu_text">营养师咨询</view>
+  </view>
+  <view class="menu_item" bind:tap="developing">
+    <image class="menu_image" src="../../images/find_menu3.png" mode="widthFix"></image>
+    <view class="menu_text">更多</view>
+  </view>
+</view>
+<view class="find_menu shadow shadow-lg bg-white" style="top:35%;">
+  <view class="cu-avatar xs radius">
+    <view class="cu-tag badge">1</view>
+    <text class="cuIcon-service text-gray"></text>
+  </view>
+  <view class="text_float">立即开始接种咨询</view>
+  <view class="cuIcon-right text-gray " style="float:right;line-height: 64rpx;font-size:40rpx;"></view>
+</view>
+<view class="zhanwei"></view>
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="cuIcon-titles text-green"></text>
+    <text class="text-xl text-bold">专属推荐</text>
+  </view>
+</view>
+<view class="cu-card article no-card ">
+  <view class="cu-item shadow solid-bottom " wx:for="{{articleList}}" wx:for-item="item" wx:key bind:tap="jumpArticleInfo" data-id="{{item.id}}">
+    <view class="title">
+      <view class="text-cut">{{item.name}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.cover_img?siteroot+'upload/picture/'+item.cover_img:'../../images/wenzhang_ZW.png'}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content text_overflow">{{item.describe}}</view>
+        <view>
+          <view class="text-df text-grey">{{item.create_time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+/* pages/equipment/addEquipment.wxss */
+.add_img{
+    width: 70%;
+    display: block;
+    margin:0 auto;
+    margin-top: 25%;
+}
+.cu-load.loading::after{
+    content: "设备搜索中...";
+}

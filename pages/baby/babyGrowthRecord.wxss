@@ -1,0 +1,65 @@
+/* pages/find/babyGrowthRecord.wxss */
+
+.cu-form-group picker {
+    flex: 1;
+    padding-right: 40rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.cu-form-group picker .picker {
+    line-height: 100rpx;
+    font-size: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: right;
+}
+
+.babyPicker::after {
+    font-family: "cuIcon";
+    display: block;
+    content: "\e6a3";
+    position: absolute;
+    font-size: 34rpx;
+    color: var(--grey);
+    line-height: 100rpx;
+    width: 60rpx;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: -20rpx;
+    margin: auto;
+    overflow: hidden;
+}
+
+.title-footer {
+    position: relative;
+    z-index: 1;
+    height: 80rpx;
+    line-height: 80rpx;
+    overflow: hidden;
+    color: #aaa;
+    text-align: center;
+    margin: 0 18rpx 0;
+}
+
+.title-footer .cont {
+    background: #fff;
+    padding: 0 20rpx;
+    font-size: 28rpx;
+    z-index: 10;
+}
+
+.title-footer .hr {
+    background: linear-gradient(to right, #f7f6f6, #ddd, #f7f6f6);
+    height: 2rpx;
+    border: 0;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    margin-top: 1px;
+    z-index: -1;
+}

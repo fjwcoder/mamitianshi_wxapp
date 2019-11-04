@@ -1,0 +1,21 @@
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+    <view slot="content">推荐文章详情</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<view class="_header bg-white solid-bottom">
+    <view class=" text-xl padding text-bold ">{{articleInfo.name}}</view>
+    <view class="secondary_header padding">
+        <view class="tag_box">
+            <view class="cu-tag bg-{{colorList[idx]}} light sm round" wx:for="{{articleInfo.tag}}" wx:for-item="tagItem" wx:key wx:for-index="idx">
+                {{tagItem}}
+            </view>
+        </view>
+        <view class="text-df author text-gray">作者：{{articleInfo.author}}</view>
+        <view class="text-sm text-grey publishedTime">{{articleInfo.create_time}}</view>
+    </view>
+</view>
+<view class="_content padding text-df text-black ">{{articleInfo.content}}</view>
+<view class="title-footer p-r">
+    <text class="f-24 col-9 cont">END</text>
+    <view class="hr"></view>
+</view>

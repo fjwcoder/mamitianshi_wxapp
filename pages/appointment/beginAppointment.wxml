@@ -1,0 +1,112 @@
+<import src="../../wxParse/wxParse.wxml" />
+<cu-custom bgColor="bg-gradual-pink" isCustom="{{true}}">
+    <view slot="content">开始预约</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<form>
+    <view class="cu-form-group margin-top">
+        <view class="title text-pink">
+            <text class="cuIcon-clothesfill text-pink"></text>
+            选择宝宝
+        </view>
+        <picker bindchange="chooseBaby" value="{{index}}" range="{{babyList}}" range-key="baby_name" class="babyPicker">
+            <!-- <view class="picker">{{babyList[index].baby_name}}</view> -->
+            <view class="picker">{{index===null?'请选择':babyList[index].baby_name}}</view>
+        </picker>
+    </view>
+</form>
+<view wx:if="{{baby_id}}">
+    <view class="baby_content margin-top shadow-warp bg-white ">
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-titles text-pink"></text>
+                <text class="text-df">宝宝基本信息</text>
+            </view>
+        </view>
+        <view class="baby_info">
+            <view style=" overflow: hidden; ">
+                <view class="name">姓名：{{babyList[index].baby_name}}</view>
+                <view class="sex">性别：{{babyList[index].baby_sex === 1?'男':'女'}}</view>
+            </view>
+            <view class="birth">出生日期：{{babyList[index].baby_birth_date}}</view>
+            <view class="birth">接种点：{{inj_p_name}}</view>
+            <view class="inj_p_btn " bind:tap="jumpChooseInjectposition">点击重新选择接种点</view>
+        </view>
+    </view>
+    <view class="inj_content margin-top shadow-warp bg-white">
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-titles text-cyan"></text>
+                <text class="text-df">即将接种疫苗</text>
+            </view>
+        </view>
+        <view class="inj_info" wx:for="{{vacList}}" wx:for-item="item" wx:for-index="idx" wx:key>
+            <view class="inj_name">疫苗名称({{idx+1}})：{{item.v_name}}</view>
+        </view>
+        <view class="inj_info">
+            <view class="inj_date">建议接种日期：{{nextInjDate}}</view>
+        </view>
+        <view class="inj_introduce_btn " bind:tap="showVacModal">点击查看疫苗简介</view>
+    </view>
+    <view class="inj_content margin-top shadow-warp bg-white">
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-titles text-green"></text>
+                <text class="text-df">预约接种</text>
+            </view>
+        </view>
+        <form action="">
+            <view class="cu-form-group margin-top solid-bottom">
+                <view class="title">开始日期</view>
+                <picker mode="date" value="{{bDate}}" start="{{specify_begin_date}}" end="{{specify_end_date}}" bindchange="beginDateChange" name="id_card_begintime">
+                    <view class="_picker">{{bDate?bDate:'请选择'}}</view>
+                </picker>
+                <view class="cu-capsule radius">
+                    <view class="cu-tag bg-green biaoqian">开始</view>
+                </view>
+            </view>
+            <view class="cu-form-group margin-top solid-bottom">
+                <view class="title">结束日期</view>
+                <picker mode="date" value="{{eDate}}" start="{{specify_begin_date}}" end="{{specify_end_date}}" bindchange="endDateChange" name="id_card_endtime">
+                    <view class="_picker">{{eDate?eDate:'请选择'}}</view>
+                </picker>
+                <view class="cu-capsule radius">
+                    <view class="cu-tag bg-red biaoqian">结束</view>
+                </view>
+            </view>
+        </form>
+    </view>
+    <button class="addBtn shadow shadow-lg bg-pink" id="queding" style="margin-top:30rpx;background-color:#e03997" bind:tap="submitData">
+        提交预约
+    </button>
+</view>
+<view class="cu-modal bottom-modal {{show?'show':''}}" scroll-y>
+    <!-- <scroll-view> -->
+    <view class="cu-dialog" style="margin-top:150rpx;">
+        <view class="cu-bar bg-white">
+            <view class="action text-blue" bindtap="hideModal" style="font-size:28rpx">
+                需接种
+                <text class="ym_num">{{vacList.length}}</text>
+                针疫苗
+            </view>
+            <view class="action text-green" bindtap="hideModal">确定</view>
+        </view>
+        <!-- 以下为弹框内容 -->
+        <view class="bg-white margin-bottom" wx:for="{{vacList}}" wx:for-item="item" wx:key wx:for-index="i">
+            <view class="cu-bar bg-white">
+                <view class="action">
+                    <text class="cuIcon-title text-green"></text>
+                    <text>{{item.v_name}}</text>
+                </view>
+            </view>
+            <view class="ym_yongtu text-blue">{{item.affect}}</view>
+            <view class="neirong padding-xl text-left text-sm">{{item.vaccine_text}}</view>
+        </view>
+    </view>
+    <!-- </scroll-view> -->
+</view>
+<!-- 加载动态图 -->
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>

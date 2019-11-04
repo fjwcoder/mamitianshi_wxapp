@@ -1,0 +1,76 @@
+/* pages/equipment/startMeasuring.wxss */
+
+
+/* page {
+    background-color: #fff;
+} */
+
+
+/* .big_box {
+    background-color: #fff;
+} */
+
+._addBtn {
+    width: 600rpx;
+    margin: 60rpx auto;
+    margin-top: 80rpx;
+    color: #fff;
+    /* background-color: #24c789; */
+    line-height: 80rpx;
+    border-radius: 999px;
+    text-align: center;
+}
+
+.tem_box {
+    width: 260rpx;
+    height: 260rpx;
+    line-height: 260rpx;
+    font-size: 50rpx;
+    font-weight: 700;
+    color: #39b54a;
+    border-radius: 999px;
+    border: 12rpx solid #39b54a;
+    margin: 30rpx auto;
+    text-align: center
+}
+
+.tem_text {
+    color: #999;
+    font-size: 26rpx;
+    margin: 15rpx 0;
+    text-align: center;
+}
+
+.cu-form-group picker {
+    flex: 1;
+    padding-right: 40rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.cu-form-group picker .picker {
+    line-height: 100rpx;
+    font-size: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: right;
+}
+
+.babyPicker::after {
+    font-family: "cuIcon";
+    display: block;
+    content: "\e6a3";
+    position: absolute;
+    font-size: 34rpx;
+    color: var(--grey);
+    line-height: 100rpx;
+    width: 60rpx;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: -20rpx;
+    margin: auto;
+    overflow: hidden;
+}

@@ -1,0 +1,27 @@
+/* pages/baby/chooseInjectposition.wxss */
+page{
+    padding-bottom: 180rpx;
+}
+.item_box {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin-top: 30rpx;
+}
+
+.dizhi {
+    font-size: 26rpx;
+}
+
+.cu-bar {
+    border-top-right-radius: 10rpx;
+    border-top-left-radius: 10rpx;
+}
+
+.addBtn {
+    position: fixed;
+    bottom: 20rpx;
+    left: calc(50% - 300rpx);
+    box-shadow: 0 10rpx 8rpx -8rpx #048553
+}

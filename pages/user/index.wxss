@@ -1,0 +1,110 @@
+/* pages/user/index.wxss */
+
+page {
+    background-color: #fafafa;
+    position: relative;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.user_card {
+    height: 260rpx;
+    background: linear-gradient(115deg, #3aff93, #23cd70);
+    border-radius: 20rpx;
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    box-shadow: 0 15rpx 15rpx rgba(0, 177, 88, 0.2);
+    position: relative;
+}
+
+.user_img {
+    height: 130rpx;
+    width: 130rpx;
+    border-radius: 999px;
+    background-color: #fff;
+    position: absolute;
+    top: calc(50% - 65rpx);
+    left: 50rpx;
+    overflow: hidden;
+}
+
+.user_name {
+    font-size: 40rpx;
+    font-weight: 600;
+    color: #fff;
+    line-height: 260rpx;
+    margin-left: 220rpx;
+}
+
+.user_img_w {
+    height: 160rpx;
+    width: 160rpx;
+    position: absolute;
+    top: calc(50% - 80rpx);
+    right: 120rpx;
+}
+
+.user_img_w image {
+    width: 100%;
+    display: block;
+}
+
+.head_portrait {
+    border-radius: 999px;
+    width: 100%;
+    display: block;
+}
+
+.user_right {
+    font-size: 40rpx;
+    position: absolute;
+    top: calc(50% - 20rpx);
+    right: 40rpx;
+    color: #fff;
+}
+
+.white_block {
+    height: 440rpx;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.margin-top {
+    margin-top: 15rpx;
+}
+
+.menu_icon {
+    font-size: 44rpx;
+    color: #24c789;
+}
+
+._menu_icon {
+    font-size: 64rpx;
+    color: #24c789;
+    margin-right: 10rpx;
+    width: 2.6em;
+    align-items: center;
+    text-align: center;
+    margin-left: 10rpx;
+}
+
+.bottom_btn {
+    width: 80%;
+    line-height: 80rpx;
+    font-size: 26rpx;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12rpx;
+    margin: 30rpx auto;
+}
+
+.cu-list.menu>.cu-item:after {
+    border: none;
+}

@@ -1,0 +1,63 @@
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+  <view slot="content">宝宝成长记录</view>
+  <view class="action" slot="right"></view>
+</cu-custom>
+<form>
+  <view class="cu-form-group margin-top">
+    <view class="title text-pink">
+      <text class="cuIcon-clothesfill text-pink"></text>
+      选择宝宝
+    </view>
+    <picker bindchange="chooseBaby" value="{{index}}" range="{{babyList}}" range-key="baby_name" class="babyPicker">
+      <!-- <view class="picker">{{babyList[index].baby_name}}</view> -->
+      <view class="picker">{{index===null?'请选择':babyList[index].baby_name}}</view>
+    </picker>
+  </view>
+</form>
+<view class="" hover-class="none" hover-stop-propagation="false" wx:if="{{baby_id}}">
+  <scroll-view scroll-x class="bg-white nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{TabCur==0?'text-green cur':''}}" bindtap="tabSelect" data-id="{{0}}">
+        疫苗预约记录
+      </view>
+      <view class="cu-item flex-sub {{TabCur==1?'text-green cur':''}}" bindtap="tabSelect" data-id="{{1}}">
+        体温记录
+      </view>
+    </view>
+  </scroll-view>
+  <view class="bg-white" hover-class="none" hover-stop-propagation="false" style="padding: 40rpx">
+    <view class="" hover-class="none" hover-stop-propagation="false" wx:if="{{TabCur===0}}">
+      <view class="cu-timeline" wx:for="{{appoGroList}}" wx:key wx:for-index="idx">
+        <view class="cu-time " style="width:140rpx">{{item.dateTimeArr[0]}}</view>
+        <view class="cu-item text-{{colorList[idx]}} ">
+          <view class="content bg-{{colorList[idx]}} shadow-blur" wx:for="{{item.vaccine_list}}" wx:key wx:for-item="vacItem">
+            <text>【{{item.dateTimeArr[1]}}】</text>
+            <text class="">{{vacItem.zh_name_full}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="" wx:if="{{appoGroList.length<1}}">暂时没有疫苗预约记录哦～</view>
+    </view>
+    <view class="" hover-class="none" hover-stop-propagation="false" wx:if="{{TabCur===1}}">
+      <view class="cu-timeline" wx:for="{{tempGroList}}" wx:key wx:for-index="idx">
+        <view class="cu-time " style="width:140rpx">{{item.ymd}}</view>
+        <view class="cu-item text-{{colorList[idx]}} ">
+          <view class="content bg-{{colorList[idx]}} shadow-blur" wx:for="{{item.data}}" wx:key wx:for-item="dataItem">
+            <text>【{{dataItem.hm}}】</text>
+            <text class="">{{dataItem.temp}}°C</text>
+          </view>
+        </view>
+      </view>
+      <view class="" wx:if="{{tempGroList.length<1}}">暂时没有体温测量记录哦～</view>
+    </view>
+    <view class="title-footer p-r">
+      <text class="f-24 col-9 cont">END</text>
+      <view class="hr"></view>
+    </view>
+  </view>
+</view>
+<!-- 加载动态图 -->
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+  <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>

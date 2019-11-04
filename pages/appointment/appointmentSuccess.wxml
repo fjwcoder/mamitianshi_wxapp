@@ -1,0 +1,14 @@
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+    <view slot="content">预约成功</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<view class="img_box" hover-class="none" hover-stop-propagation="false">
+    <image class="" src="../../images/appointment_success.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+</view>
+<view class="img_text">
+    恭喜您，预约成功！
+</view>
+  
+<button class="addBtn shadow shadow-lg bg-pink" id="queding" style="margin-top:60rpx;" bind:tap="jumpList">
+    确定
+</button>
