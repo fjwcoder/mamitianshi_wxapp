@@ -20,7 +20,7 @@
     </view>
     <view class="cu-form-group margin-top solid-bottom">
         <view class="title">接种卡号</view>
-        <input placeholder="请输入身份证号" type="idcard" name="card_no" ></input>
+        <input placeholder="请输入接种卡号" type="idcard" name="card_no" ></input>
     </view>
     <view class="cu-form-group margin-top solid-bottom">
         <view class="title">出生日期</view>
