@@ -20,8 +20,10 @@
         <view class="menu_text">库存</view>
     </view>
     <view class="menu_item" style="color:#ffd300">
-        <image class="menu_image" src="../../images/menu2.png" mode="widthFix"></image>
-        <view class="menu_text">更多</view>
+        <navigator url="../baby/babyVaccinationRecord" hover-class="none">
+            <image class="menu_image" src="../../images/menu2.png" mode="widthFix"></image>
+            <view class="menu_text">接种记录</view>
+        </navigator>
     </view>
 </view>
 <view class="cu-bar bg-white">

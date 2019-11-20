@@ -163,10 +163,11 @@ App({
      * 冰箱post提交
      */
     _post_form_ice: function(url, data, success, fail, complete) {
+      // console.log(this.decrypt(data))
         wx.showNavigationBarLoading();
         let App = this;
         wx.request({
-            url: "http://192.168.1.120:8088/" + url,
+          url: this.siteInfo.vaccine_root + url,
             header: {
                 'content-type': 'application/x-www-form-urlencoded',
                 'accesstoken': App.access_token,

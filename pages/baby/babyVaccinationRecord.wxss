@@ -1,0 +1,65 @@
+/* pages/baby/babyVaccinationRecord.wxss */
+.cu-form-group picker {
+    flex: 1;
+    padding-right: 40rpx;
+    overflow: hidden;
+    position: relative;
+}
+
+.cu-form-group picker .picker {
+    line-height: 100rpx;
+    font-size: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: right;
+}
+
+.babyPicker::after {
+    font-family: "cuIcon";
+    display: block;
+    content: "\e6a3";
+    position: absolute;
+    font-size: 34rpx;
+    color: var(--grey);
+    line-height: 100rpx;
+    width: 60rpx;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: -20rpx;
+    margin: auto;
+    overflow: hidden;
+}
+
+.cu-form-group input {
+    text-align: right
+}
+
+
+
+
+.list_item {
+    width: 94%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10rpx 10rpx 30rpx rgba(0, 0, 0, 0.10)
+}
+
+.list_item_content {
+    padding: 30rpx;
+    padding-left: 50rpx;
+    padding-top: 15rpx;
+    border-bottom: 1rpx solid #f2f2f2
+}
+
+.ym_name_box {
+    line-height: 40rpx;
+
+}
+.ym_name{
+    display: inline-block;
+    margin-left: 20rpx
+}

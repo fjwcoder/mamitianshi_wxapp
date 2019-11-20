@@ -1,0 +1,62 @@
+<cu-custom bgColor="bg-gradual-green" isCustom="{{true}}">
+    <view slot="content">宝宝接种记录</view>
+    <view class="action" slot="right"></view>
+</cu-custom>
+<form>
+    <view class="cu-form-group margin-top">
+        <view class="title text-pink">
+            <text class="cuIcon-clothesfill text-pink"></text>
+            选择宝宝
+        </view>
+        <picker bindchange="chooseBaby" value="{{index}}" range="{{babyList}}" range-key="baby_name" class="babyPicker">
+            <!-- <view class="picker">{{babyList[index].baby_name}}</view> -->
+            <view class="picker">{{index===null?'请选择':babyList[index].baby_name}}</view>
+        </picker>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title">接种卡号</view>
+        <input placeholder="请输入接种卡号" value="{{card_no}}" bindinput="onInputCardNo"></input>
+    </view>
+    <view class="padding flex flex-direction">
+        <button class="cu-btn bg-green margin-tb-sm lg" bind:tap="beganToQuery">查询</button>
+    </view>
+</form>
+<view class="vac_list">
+    <view class="list_item" wx:for="{{injectList}}" wx:key wx:for-item="item">
+        <view class="cu-bar bg-white border-bottom">
+            <view class="action">
+                <text class="cuIcon-titles text-green"></text>
+                <text class="text-xl text-bold">{{item.c_time}}</text>
+            </view>
+        </view>
+        <view class="list_item_content  bg-white" wx:for="{{item.vaccine_list}}" wx:for-item="ym_item" wx:key>
+            <view class="ym_name_box">
+                <text class=" ">疫苗名称：</text>
+                <text class="ym_name text-green">{{ym_item.vaccine_name}}</text>
+                <text class=" " style=" display: inline-block;margin-left: 20rpx;">剂次：</text>
+                <text class="ym_name text-green">{{ym_item.Times}}</text>
+            </view>
+            <view class="ym_name_box">
+                <text class=" ">接种部位：</text>
+                <text class="ym_name text-green">{{ym_item.VaccinationPosition}}</text>
+            </view>
+            <view class="ym_name_box">
+                <text class=" ">接种时间：</text>
+                <text class="ym_name text-green">{{ym_item.VaccinationDate}}</text>
+            </view>
+            <view class="ym_name_box">
+                <text class=" ">接种点名称：</text>
+                <text class="ym_name text-green">{{item.name}}</text>
+            </view>
+            <view class="ym_name_box">
+                <text class=" ">是否免费：</text>
+                <text class="ym_name text-green">{{ym_item.IsFree === 1?'是':'否'}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 加载动态图 -->
+<view class="black_bolck" wx:if="{{showLoad}}"></view>
+<view class="loading_img" wx:if="{{showLoad}}">
+    <image src='https://image.weilanwl.com/gif/loading-white.gif' class='gif-black response' mode='aspectFit'></image>
+</view>

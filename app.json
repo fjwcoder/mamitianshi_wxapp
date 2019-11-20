@@ -1,66 +1,65 @@
 {
-    "pages": [
-     
-        "pages/index/index",
-        "pages/find/index",
-        "pages/equipment/index",
-        "pages/user/index",
-        "pages/baby/addBaby",
-        "pages/equipment/addEquipment",
-        "pages/user/userInfo",
-        "pages/baby/babyList",
-        "pages/baby/chooseInjectposition",
-        "pages/baby/editBaby",
-        "pages/appointment/beginAppointment",
-        "pages/appointment/appointmentList",
-        "pages/appointment/appointmentInfo",
-        "pages/appointment/appointmentSuccess",
-       
-        "pages/login/login",
-        "pages/equipment/startMeasuring",
-        "pages/find/articleInfo",
-        "pages/baby/babyGrowthRecord"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationStyle": "custom",
-        "navigationBarTextStyle": "white"
-    },
-    "usingComponents": {
-        "cu-custom": "/colorui/components/cu-custom"
-    },
-    "tabBar": {
-        "color": "#333333",
-        "selectedColor": "#24c789",
-        "backgroundColor": "#ffffff",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "首页",
-                "iconPath": "/images/tabBar/home.png",
-                "selectedIconPath": "/images/tabBar/home_A.png"
-            },
-            {
-                "pagePath": "pages/equipment/index",
-                "text": "设备",
-                "iconPath": "/images/tabBar/equipment.png",
-                "selectedIconPath": "/images/tabBar/equipment_A.png"
-            },
-            {
-                "pagePath": "pages/find/index",
-                "text": "发现",
-                "iconPath": "/images/tabBar/find.png",
-                "selectedIconPath": "/images/tabBar/find_A.png"
-            },
-            {
-                "pagePath": "pages/user/index",
-                "text": "我的",
-                "iconPath": "/images/tabBar/user.png",
-                "selectedIconPath": "/images/tabBar/user_A.png"
-            }
-        ]
-    },
-    "sitemapLocation": "sitemap.json"
+  "pages": [
+    "pages/index/index",
+    "pages/find/index",
+    "pages/equipment/index",
+    "pages/user/index",
+    "pages/baby/addBaby",
+    "pages/equipment/addEquipment",
+    "pages/user/userInfo",
+    "pages/baby/babyList",
+    "pages/baby/chooseInjectposition",
+    "pages/baby/editBaby",
+    "pages/appointment/beginAppointment",
+    "pages/appointment/appointmentList",
+    "pages/appointment/appointmentInfo",
+    "pages/appointment/appointmentSuccess",
+    "pages/login/login",
+    "pages/equipment/startMeasuring",
+    "pages/find/articleInfo",
+    "pages/baby/babyGrowthRecord",
+    "pages/baby/babyVaccinationRecord"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#24c789",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tabBar/home.png",
+        "selectedIconPath": "/images/tabBar/home_A.png"
+      },
+      {
+        "pagePath": "pages/equipment/index",
+        "text": "设备",
+        "iconPath": "/images/tabBar/equipment.png",
+        "selectedIconPath": "/images/tabBar/equipment_A.png"
+      },
+      {
+        "pagePath": "pages/find/index",
+        "text": "发现",
+        "iconPath": "/images/tabBar/find.png",
+        "selectedIconPath": "/images/tabBar/find_A.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "/images/tabBar/user.png",
+        "selectedIconPath": "/images/tabBar/user_A.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }
